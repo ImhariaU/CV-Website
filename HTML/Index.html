@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="this is my fisrt webpage where I will be exploring my skills and interests"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Imharia's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <header>
+    <h1 style="text-align: center">IMHARIA UGHU</h1>
+  </header>
+  <body>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="nav-link-wrapper active-nav-link">
+          <a href="Index.html">Home</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="about.html">About</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="portfolio-items-wrapper">
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(Images/background/education.png)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="" />
+              </div>
+              <button class="button modal-btn">EDUCATION</button>
+
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Education History</h2>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Jul 2021</h4>
+                    <h3>Degree</h3>
+                    <p>Chemical Engineering BEng</p>
+                    <p>University of Leeds | Leeds</p>
+                    <p></p>
+                    <h4>Jul 2016</h4>
+                    <h3>A-Levels</h3>
+                    <p>Bacon's College | London</p>
+                    <p>Maths, Chemistry, Physics</p>
+                    <p></p>
+                    <h4>Jul 2014</h4>
+                    <h3>GCSE</h3>
+                    <p>Bacon's College | London</p>
+                    <p>
+                      Maths (A), English Language (B), English Literature (B)
+                    </p>
+                  </div>
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+
+              <div class="subtitle">
+                A quick look at my educational background from secondary school
+                up to my highest form of education which is a degree in
+                Engineering.
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(images/background/work.png)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="" />
+              </div>
+              <button class="button modal-btn">WORK EXPERIENCE</button>
+              <div id="modal2" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Work History</h2>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      Feb 2018 - Current <br />
+                      <h4>Coding Tutor</h4> Firetech Camp - London <br />
+                       <br>
+                      ●
+                      Boosted student engagement by employing
+                      innovative learning methods, including cross over
+                      teaching, virtual reality, personalised and
+                      game-based methods. <br>
+                      ●
+                      Act as guardian and cater to needs of children
+                      (trained in first aid) <br>
+                      ●
+                      Facilitate learning environment and tailor teaching
+                      to those with learning difficulties and making sure it
+                      is inclusive
+                    </p>
+                  </div>
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+
+              <div class="subtitle">
+                A breakdown of my work experience so far ranging from insurance
+                to tech.
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(images/background/skills.png)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="" />
+              </div>
+              <div class="title">SKILLS</div>
+              <div class="subtitle">
+                An overlook of the skills that I have been able to acquire over
+                the years and their applications.
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(images/background/hobbies.png)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="" />
+              </div>
+              <div class="title">HOBBIES & PASSIONS</div>
+              <div class="subtitle">
+                Some insight into the things I like to do in my spare time and
+                what my hopes and ambitions for the future are.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const portfolioItems = document.querySelectorAll(".portfolio-item-wrapper");
+
+    portfolioItems.forEach((portfolioItem) => {
+      portfolioItem.addEventListener("mouseover", () => {
+        portfolioItem.childNodes[1].classList.add("img-darken");
+      });
+      portfolioItem.addEventListener("mouseout", () => {
+        portfolioItem.childNodes[1].classList.remove("img-darken");
+      });
+    });
+
+    // Get DOM Elements
+
+    const modalButtons = document.querySelectorAll(".modal-btn");
+    modalButtons.forEach((modalButton) => {
+      modalButton.addEventListener("click", function () {
+        const modal = modalButton
+          .closest(".img-text-wrapper")
+          .querySelector(".modal");
+        openModal(modal);
+      });
+    });
+
+    const closeButtons = document.querySelectorAll(".close");
+    closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener("click", closeModal);
+    });
+
+    // Open
+    function openModal(modal) {
+      modal.style.display = "block";
+    }
+
+    // Close
+    function closeModal() {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach((modal) => {
+        modal.style.display = "none";
+      });
+    }
+  </script>
+</html>
